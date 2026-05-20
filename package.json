@@ -1,0 +1,8 @@
+{
+  "name": "ph-scale-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An interactive 10th-grade science project explaining pH (acids, bases, neutralization) with 10 animated diagrams and an MCP teaching tool server.",
+  "keywords": ["ph", "chemistry", "education", "10th-grade", "mcp", "science-project"],
+  "license": "MIT"
+}

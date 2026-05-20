@@ -1,0 +1,23 @@
+{
+  "name": "ph-teaching-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server that provides pH-related teaching tools: pH calculation, substance lookup, indicator colors, neutralization predictions, and acidity comparisons.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "ph-teaching-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": ["mcp", "chemistry", "ph", "education", "10th-grade", "science"],
+  "author": "10th Grade Science Project",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
