@@ -348,3 +348,42 @@ function phColor(ph) {
     }, 1800);
   });
 })();
+
+// ============================================================
+// AGENT A'S TESTER SIMULATION
+// ============================================================
+(function() {
+  const btns = document.querySelectorAll('.food-btn');
+  const readout = document.getElementById('tester-readout');
+  const result = document.getElementById('tester-result');
+  const probe = document.getElementById('tester-probe');
+  
+  if (!readout) return;
+  
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ph = parseFloat(btn.dataset.ph);
+      const name = btn.dataset.name;
+      
+      // Simulate dipping
+      probe.style.transition = 'transform 0.3s';
+      probe.style.transform = 'translateY(15px)';
+      readout.textContent = '...';
+      readout.style.fill = '#fdd835';
+      result.textContent = `Testing ${name}...`;
+      
+      setTimeout(() => {
+        probe.style.transform = 'translateY(0)';
+        readout.textContent = ph.toFixed(1);
+        
+        if (ph >= 6.5 && ph <= 7.5) {
+          readout.style.fill = '#00e676'; // Safe green
+          result.innerHTML = `<span style="color:#2e7d32">SAFE.<br>Serve to Prime Minister.</span>`;
+        } else {
+          readout.style.fill = '#ff1744'; // Danger red
+          result.innerHTML = `<span style="color:#d32f2f">DANGER!<br>Toxin trigger risk. Discard.</span>`;
+        }
+      }, 800);
+    });
+  });
+})();
